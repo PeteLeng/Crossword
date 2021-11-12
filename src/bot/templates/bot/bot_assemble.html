@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="POST"> {% csrf_token %}
+    <p>{{ form.words_raw.label }}</p>
+    <p>{{ form.words_raw.as_widget }}</p>
+    <p>{{ form.words_raw.errors }}</p>
+    <input type="submit" name="assemble" value ='Assemble!'>
+    <button type="button" id="clear">Clear!</button>
+</form>
+
+<script></script>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>DISPLAY!</h1>
+
+<div id="src">
+    <form hidden action="../" method="GET" id="back"> {% csrf_token %}
+        <p> {{ form.as_p }}</p>
+    </form>
+    <p>{{ qs|json_script:"qs" }}</p>
+    <p>{{ words|json_script:"word_list" }}</p>
+</div>
+
+<div id="control">
+    <div id="main-control">
+        <button type="submit" form="back">BACK</button>
+        <button id="save" type="button">SAVE</button>
+    </div>
+    <div id="view-control">
+        <button id='next' type="button">NEXT</button>
+        <button id='prev' type="button">PREV</button>
+        <button id="plus" type="button">+</button>
+        <button id="minus" type="button">-</button>
+        <button id="preview" type="button">VIEW</button>
+    </div>
+    <br>
+</div>
+
+<div id="display-container">
+    <div id="left"></div>
+    <div id="grid-container"></div>
+    <div style="visibility:hidden" id="cross">
+        <p><u>CROSS:</u></p>
+    </div>
+    <div style="visibility:hidden" id="down">
+        <p><u>DOWN:</u></p>
+    </div>
+</div>
+
+{% load static %}
+<link type="text/css" rel="stylesheet" href="{% static 'css/bot.css' %}">
+<script>
+    const word_list = document.getElementById('word_list');
+    var words = JSON.parse(word_list.innerHTML);
+</script>
+<script type="text/javascript" src="{% static 'js/bot.js' %}"></script>
+
+{% endblock %}
