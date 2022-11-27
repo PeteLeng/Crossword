@@ -6,7 +6,7 @@ class WordForm(forms.ModelForm):
         label='Enter your words below:',
         widget=forms.Textarea(
             attrs={
-                'placeholder': 'One word each line',
+                'placeholder': 'One word each line.\nMaximum 15 words.',
                 'rows': 20,
             }
         )

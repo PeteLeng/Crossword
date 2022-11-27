@@ -72,11 +72,12 @@ function createHint() {
     for (var word of cw_words) {
         let label = document.createElement('label');
         let prompt = document.createElement('input');
+        let note = document.createElement('span');
         label.textContent = word;
         label.setAttribute('for', word);
         prompt.type = "text";
         prompt.id = word;
-        prompt.placeholder = "Hint";
+        prompt.placeholder = "Save your hint";
         if (hints[word]) {prompt.value = hints[word]};
         left.appendChild(label);
         left.appendChild(prompt);

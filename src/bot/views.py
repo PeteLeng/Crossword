@@ -28,11 +28,13 @@ class AssembleView(View):
     def post(self, request, *args, **kwargs):
         word_form = WordForm(request.POST)
         print(request.POST)
-        if word_form.is_valid():
+        if 'assemble' in request.POST and word_form.is_valid():
             words = word_form.save()
             self.gen_crossword(words)
             # return redirect(f'./{words.id}/')  # non-cache
             return redirect(f'./{words.id}/')  # cache
+        elif 'clear' in request.POST:
+            word_form = WordForm()
         context = {
             'form': word_form,
         }
@@ -76,6 +78,7 @@ class AssembleDetailView(View):
     def get(self, request, id1, *args, **kwargs):
         words = WordList.objects.get(id=id1)
         qs = self.get_object(id1)
+        print(qs)
         pattern_list = [ins.unpack() for ins in qs]
         form = WordForm(instance=words)
         context = {
