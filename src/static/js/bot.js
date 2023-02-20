@@ -28,7 +28,6 @@ let display_locs = cw_locs;
 let display_ordering = cw_ordering;
 let hints = {};
 
-
 // Event binding
 btn_next.onclick = next;
 btn_prev.onclick = prev;
@@ -36,6 +35,16 @@ btn_plus.onclick = plus;
 btn_minus.onclick = minus;
 btn_view.onclick = preview;
 btn_save.onclick = save;
+
+$(document).ready(function() {
+    console.log("page loaded!");
+    next();
+});
+
+// window.onload = function() {
+//     console.log("Page loaded!");
+//     next();
+// }
 
 // Functions
 // Update crossword pattern
@@ -247,3 +256,6 @@ function preview() {
         down.setAttribute("style", "visibility:hidden");
     }
 }
+
+// Run after load
+

@@ -1,3 +1,4 @@
-# The Smart Crossword
-A web application for making crossword. 
-https://pete2199.pythonanywhere.com/bot/
+# Crossword Fusion
+A web application for generating crossword.
+
+Click [here](https://pete2199.pythonanywhere.com/bot/) to try.

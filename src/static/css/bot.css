@@ -60,7 +60,7 @@ label {
     border: 1px solid;
     font-size: 1.2em;
     text-align: center;
-    padding-top: 5px;
+    /* padding-top: 5px; */
 }
 
 .grid-item.fade {
@@ -72,14 +72,14 @@ label {
 
 .numberCircle {
     border-radius: 50%;
-    width: 1em;
-    height: 1em;
+    width: 1.5em;
+    height: 1.5em;
     border: 1px solid;
     color: black;
     text-align: center;
     font-size: 0.5em;
     margin-left: 0.2em;
-    margin-top: -0.2em;
+    /* margin-top: -0.2em; */
 }
 
 .order {
